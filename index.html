@@ -1,256 +1,230 @@
+index.html dosyandaki eski kodun tamamını silip bunu yapıştır:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>DOGE AIRDROP</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
-
 body{
 background:#0b1120;
 color:white;
-overflow:hidden;
+overflow-x:hidden;
+padding-bottom:90px;
 }
-
 .top{
-padding:20px;
+padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
-
 .logo{
-font-size:28px;
+font-size:22px;
 font-weight:700;
 color:#facc15;
 }
-
 .level{
 background:#1e293b;
-padding:10px 15px;
+padding:8px 12px;
 border-radius:12px;
+font-size:13px;
 }
-
 .balanceBox{
 text-align:center;
-margin-top:10px;
+margin-top:5px;
 }
-
 .balanceText{
 opacity:.7;
-font-size:16px;
+font-size:13px;
 }
-
 .balance{
-font-size:52px;
+font-size:38px;
 font-weight:700;
-margin-top:5px;
+margin-top:4px;
 color:#facc15;
 }
-
 .tapArea{
 display:flex;
 justify-content:center;
-margin-top:40px;
+margin-top:25px;
 position:relative;
 }
-
 .coin{
-width:260px;
-height:260px;
+width:210px;
+height:210px;
 border-radius:50%;
 background:linear-gradient(145deg,#facc15,#eab308);
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:110px;
+font-size:90px;
 cursor:pointer;
 transition:.08s;
 box-shadow:
-0 0 40px rgba(250,204,21,.4),
-inset 0 0 25px rgba(255,255,255,.3);
-user-select:none;
+0 0 40px rgba(250,204,21,.35),
+inset 0 0 20px rgba(255,255,255,.25);
 }
-
 .coin:active{
-transform:scale(.93);
+transform:scale(.95);
 }
-
 .float{
 position:absolute;
-font-size:28px;
+font-size:22px;
 font-weight:700;
 color:#facc15;
 animation:floatUp 1s linear forwards;
 pointer-events:none;
 }
-
 @keyframes floatUp{
-
 0%{
 opacity:1;
 transform:translateY(0);
 }
-
 100%{
 opacity:0;
-transform:translateY(-120px);
+transform:translateY(-90px);
 }
-
 }
-
 .energyBox{
-width:90%;
+width:92%;
 margin:auto;
-margin-top:30px;
+margin-top:20px;
 }
-
 .energyTop{
 display:flex;
 justify-content:space-between;
-margin-bottom:8px;
+font-size:12px;
+margin-bottom:7px;
 }
-
 .energyBar{
 width:100%;
-height:18px;
+height:14px;
 background:#1e293b;
 border-radius:20px;
 overflow:hidden;
 }
-
 .energyFill{
 width:100%;
 height:100%;
 background:#22c55e;
 }
-
 .cards{
 display:flex;
-gap:15px;
-width:90%;
+gap:10px;
+width:92%;
 margin:auto;
-margin-top:25px;
+margin-top:18px;
 }
-
 .card{
 flex:1;
 background:#111827;
-padding:18px;
-border-radius:20px;
+padding:14px;
+border-radius:18px;
 text-align:center;
 }
-
 .card h3{
-font-size:14px;
+font-size:11px;
 opacity:.7;
-margin-bottom:10px;
+margin-bottom:7px;
 }
-
 .card p{
-font-size:24px;
+font-size:18px;
 font-weight:700;
 }
-
-.screen{
-display:none;
-padding-bottom:120px;
-}
-
-.activeScreen{
-display:block;
-}
-
 .claim{
-width:90%;
+width:92%;
 margin:auto;
-margin-top:25px;
+margin-top:18px;
 background:#111827;
-padding:20px;
-border-radius:20px;
+padding:18px;
+border-radius:18px;
 }
-
+.claim h2{
+font-size:18px;
+margin-bottom:12px;
+}
 .claim input{
 width:100%;
-padding:15px;
+padding:14px;
 border:none;
-border-radius:15px;
+border-radius:14px;
 background:#0f172a;
 color:white;
-font-size:16px;
+font-size:14px;
 }
-
 .claim button{
 width:100%;
-padding:15px;
-margin-top:15px;
+padding:14px;
+margin-top:12px;
 border:none;
-border-radius:15px;
+border-radius:14px;
 background:#22c55e;
 color:white;
 font-weight:700;
-font-size:18px;
+font-size:15px;
 }
-
 .result{
-margin-top:15px;
+margin-top:12px;
 text-align:center;
+font-size:14px;
 font-weight:600;
 }
-
+.screen{
+display:none;
+}
+.activeScreen{
+display:block;
+}
 .friendItem{
 background:#111827;
-width:90%;
+width:92%;
 margin:auto;
-margin-top:15px;
-padding:18px;
-border-radius:18px;
+margin-top:12px;
+padding:15px;
+border-radius:16px;
 display:flex;
 justify-content:space-between;
-align-items:center;
+font-size:14px;
 }
-
 .walletBox{
-width:90%;
+width:92%;
 margin:auto;
-margin-top:20px;
+margin-top:18px;
 background:#111827;
-padding:25px;
-border-radius:20px;
+padding:20px;
+border-radius:18px;
 text-align:center;
 }
-
+.walletBox h1{
+font-size:30px;
+margin-top:10px;
+color:#facc15;
+}
 .walletBtn{
 width:100%;
-padding:15px;
+padding:14px;
 border:none;
-border-radius:15px;
-margin-top:15px;
+border-radius:14px;
+margin-top:12px;
 font-weight:700;
-font-size:17px;
+font-size:14px;
 }
-
 .withdraw{
 background:#facc15;
+color:black;
 }
-
 .deposit{
 background:#22c55e;
 color:white;
 }
-
 .nav{
 position:fixed;
 bottom:0;
@@ -258,388 +232,264 @@ width:100%;
 background:#111827;
 display:flex;
 justify-content:space-around;
-padding:15px 0;
-border-top:1px solid rgba(255,255,255,.08);
+padding:12px 0;
+border-top:1px solid rgba(255,255,255,.06);
 }
-
 .navBtn{
 text-align:center;
-font-size:14px;
+font-size:12px;
 opacity:.7;
 cursor:pointer;
 }
-
 .activeNav{
 opacity:1;
 color:#facc15;
 }
-
+.popup{
+position:fixed;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+background:#111827;
+padding:12px 18px;
+border-radius:14px;
+font-size:13px;
+font-weight:600;
+z-index:999;
+animation:fade 3s linear forwards;
+}
+@keyframes fade{
+0%{opacity:1;}
+100%{opacity:0;}
+}
 </style>
-
 </head>
-
 <body>
-
 <div class="top">
-
 <div class="logo">
 🐶 DOGE
 </div>
-
 <div class="level">
 LVL 1
 </div>
-
 </div>
-
 <div id="home" class="screen activeScreen">
-
 <div class="balanceBox">
-
 <div class="balanceText">
 Balance
 </div>
-
 <div class="balance" id="balance">
 0 DOGE
 </div>
-
 </div>
-
 <div class="tapArea">
-
 <div class="coin" onclick="mine(event)">
 🐶
 </div>
-
 </div>
-
 <div class="energyBox">
-
 <div class="energyTop">
 <span>⚡ Energy</span>
-<span id="energyText">
-1000 / 1000
-</span>
+<span id="energyText">1000 / 1000</span>
 </div>
-
 <div class="energyBar">
 <div class="energyFill" id="energyFill"></div>
 </div>
-
 </div>
-
 <div class="cards">
-
 <div class="card">
 <h3>Mining</h3>
 <p>+5</p>
 </div>
-
 <div class="card">
 <h3>Users</h3>
 <p>128K</p>
 </div>
-
 <div class="card">
 <h3>Profit</h3>
 <p>+12%</p>
 </div>
-
 </div>
-
 <div class="claim">
-
 <h2>🎁 Airdrop Code</h2>
-
 <input type="text" id="code" placeholder="Enter Code">
-
 <button onclick="claimCode()">
 CLAIM
 </button>
-
 <div class="result" id="result"></div>
-
 </div>
-
 </div>
-
 <div id="friends" class="screen">
-
 <div class="friendItem">
 <span>👤 ahmet123</span>
 <span>+250 DOGE</span>
 </div>
-
-<div class="friendItem">
-<span>👤 dogepro</span>
-<span>+500 DOGE</span>
-</div>
-
 <div class="friendItem">
 <span>👤 moonminer</span>
 <span>+1000 DOGE</span>
 </div>
-
+<div class="friendItem">
+<span>👤 dogeking</span>
+<span>+500 DOGE</span>
 </div>
-
+</div>
 <div id="wallet" class="screen">
-
 <div class="walletBox">
-
 <h2>💰 Wallet</h2>
-
 <h1 id="walletBalance">
 0 DOGE
 </h1>
-
-<button class="walletBtn withdraw">
+<button class="walletBtn withdraw"
+onclick="withdraw()">
 Withdraw
 </button>
-
-<button class="walletBtn deposit">
+<button class="walletBtn deposit"
+onclick="deposit()">
 Deposit
 </button>
-
 <button class="walletBtn deposit"
 onclick="claimDaily()">
-🎁 DAILY REWARD
+🎁 Daily Reward
 </button>
-
 </div>
-
 </div>
-
 <div class="nav">
-
-<div class="navBtn activeNav" onclick="openScreen('home',this)">
+<div class="navBtn activeNav"
+onclick="openScreen('home',this)">
 🏠
 <br>
 Home
 </div>
-
-<div class="navBtn" onclick="openScreen('friends',this)">
+<div class="navBtn"
+onclick="openScreen('friends',this)">
 👥
 <br>
 Friends
 </div>
-
-<div class="navBtn" onclick="openScreen('wallet',this)">
+<div class="navBtn"
+onclick="openScreen('wallet',this)">
 💰
 <br>
 Wallet
 </div>
-
 </div>
-
 <script>
-
 let balance =
 localStorage.getItem("balance") || 0;
-
 let energy =
 localStorage.getItem("energy") || 1000;
-
 updateUI();
-
 function mine(event){
-
 if(energy <= 0) return;
-
 balance = Number(balance) + 5;
 energy = Number(energy) - 5;
-
 localStorage.setItem("balance", balance);
 localStorage.setItem("energy", energy);
-
 updateUI();
-
 let float =
 document.createElement("div");
-
 float.className = "float";
-
 float.innerHTML = "+5";
-
 float.style.left =
-event.clientX - 20 + "px";
-
+event.clientX - 15 + "px";
 float.style.top =
-event.clientY - 20 + "px";
-
+event.clientY - 15 + "px";
 document.body.appendChild(float);
-
 setTimeout(()=>{
 float.remove();
 },1000);
-
 }
-
 function updateUI(){
-
 document.getElementById("balance").innerHTML =
 balance + " DOGE";
-
 document.getElementById("walletBalance").innerHTML =
 balance + " DOGE";
-
 document.getElementById("energyText").innerHTML =
 energy + " / 1000";
-
 document.getElementById("energyFill").style.width =
 energy / 10 + "%";
-
 }
-
 setInterval(()=>{
-
 if(energy < 1000){
-
 energy = Number(energy) + 2;
-
 localStorage.setItem("energy", energy);
-
 updateUI();
-
 }
-
 },1000);
-
 const codes = [
 "DOGE-TMA-7X92-KLP1",
 "DOGE-MINIAPP-2026-XQ",
 "DOGE-BOOST-VIP-92A"
 ];
-
 function claimCode(){
-
 let code =
 document.getElementById("code").value;
-
 if(codes.includes(code)){
-
 balance = Number(balance) + 1000;
-
 localStorage.setItem("balance", balance);
-
 updateUI();
-
 document.getElementById("result").innerHTML =
 "✅ 1000 DOGE Added";
-
 }else{
-
 document.getElementById("result").innerHTML =
 "❌ Invalid Code";
-
 }
-
 }
-
 function openScreen(screen,btn){
-
 document.querySelectorAll(".screen")
 .forEach(s=>{
 s.classList.remove("activeScreen");
 });
-
 document.getElementById(screen)
 .classList.add("activeScreen");
-
 document.querySelectorAll(".navBtn")
 .forEach(n=>{
 n.classList.remove("activeNav");
 });
-
 btn.classList.add("activeNav");
-
 }
-
-// DAILY REWARD
-
-let lastClaim =
-localStorage.getItem("dailyClaim");
-
 function claimDaily(){
-
-let now = Date.now();
-
-if(lastClaim && now - lastClaim < 86400000){
-
-alert("Daily reward already claimed");
-
-return;
-
-}
-
 balance = Number(balance) + 5000;
-
 localStorage.setItem("balance", balance);
-
-localStorage.setItem("dailyClaim", now);
-
 updateUI();
-
-alert("🎁 5000 DOGE CLAIMED");
-
+alert("🎁 5000 DOGE Added");
 }
-
-// RANDOM USERS
-
+function withdraw(){
+window.open(
+"https://t.me/SENINTELEGRAMIN",
+"_blank"
+);
+}
+function deposit(){
+alert(
+"Send DOGE to:\n\nDogeWallet_X92P1"
+);
+}
 const fakeUsers = [
 "dogeking",
 "elonmoon",
-"dogexminer",
+"moonminer",
 "cryptoalpha",
-"moonboy",
-"minerdoge",
-"dogelegend"
+"dogex"
 ];
-
 setInterval(()=>{
-
 let user =
 fakeUsers[
 Math.floor(Math.random()*fakeUsers.length)
 ];
-
 let amount =
 Math.floor(Math.random()*5000);
-
-let box =
+let popup =
 document.createElement("div");
-
-box.style.position = "fixed";
-box.style.top = "120px";
-box.style.left = "50%";
-box.style.transform = "translateX(-50%)";
-box.style.background = "#111827";
-box.style.padding = "14px 20px";
-box.style.borderRadius = "15px";
-box.style.zIndex = "999";
-box.style.fontWeight = "700";
-
-box.innerHTML =
+popup.className = "popup";
+popup.innerHTML =
 "💰 " + user +
 " mined " + amount + " DOGE";
-
-document.body.appendChild(box);
-
+document.body.appendChild(popup);
 setTimeout(()=>{
-box.remove();
+popup.remove();
 },3000);
-
-},8000);
-
-// AUTO SAVE
-
-setInterval(()=>{
-
-localStorage.setItem("balance", balance);
-
-},2000);
-
+},7000);
 </script>
-
 </body>
 </html>
