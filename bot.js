@@ -16,7 +16,7 @@ bot.onText(/\/start/, (msg)=>{
             {
               text:"🚀 OPEN APP",
               web_app:{
-                url:"https://BURAYA_VERCEL_LINK"
+                url:"https://url:"https://mobilmadencilik07-doge-miniapp.vercel.app/""
               }
             }
           ]
