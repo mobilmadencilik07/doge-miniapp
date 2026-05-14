@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>DOGE Mining</title>
+
+<style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:100px;
+}
+
+button{
+width:220px;
+height:220px;
+border-radius:50%;
+border:none;
+background:#facc15;
+font-size:40px;
+}
+
+.balance{
+font-size:40px;
+margin-bottom:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🐶 DOGE MINING</h1>
+
+<div class="balance" id="balance">
+0 DOGE
+</div>
+
+<button onclick="mine()">
+⛏️
+</button>
+
+<script>
+
+let balance =
+localStorage.getItem("balance") || 0;
+
+document.getElementById("balance").innerHTML =
+balance + " DOGE";
+
+function mine(){
+
+balance = Number(balance) + 5;
+
+localStorage.setItem("balance", balance);
+
+document.getElementById("balance").innerHTML =
+balance + " DOGE";
+
+}
+
+</script>
+
+</body>
+</html>
