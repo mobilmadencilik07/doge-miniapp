@@ -5,9 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DOGE MINER PRO</title>
+<title>DOGE AIRDROP</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,13 +19,12 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#081120,#0f172a);
+background:#0b1120;
 color:white;
-min-height:100vh;
-overflow-x:hidden;
+overflow:hidden;
 }
 
-.topbar{
+.top{
 padding:20px;
 display:flex;
 justify-content:space-between;
@@ -39,122 +37,171 @@ font-weight:700;
 color:#facc15;
 }
 
-.profile{
-width:45px;
-height:45px;
-border-radius:50%;
+.level{
 background:#1e293b;
-display:flex;
-justify-content:center;
-align-items:center;
-font-weight:bold;
+padding:10px 15px;
+border-radius:12px;
 }
 
-.card{
-width:92%;
-margin:auto;
+.balanceBox{
+text-align:center;
 margin-top:10px;
-background:#111827;
-border-radius:25px;
-padding:25px;
-box-shadow:0 0 30px rgba(0,0,0,.3);
 }
 
 .balanceText{
-font-size:16px;
 opacity:.7;
+font-size:16px;
 }
 
 .balance{
-font-size:45px;
+font-size:52px;
 font-weight:700;
 margin-top:5px;
 color:#facc15;
 }
 
-.mineArea{
+.tapArea{
 display:flex;
 justify-content:center;
 margin-top:40px;
+position:relative;
 }
 
-.mineBtn{
-width:230px;
-height:230px;
-border:none;
+.coin{
+width:260px;
+height:260px;
 border-radius:50%;
 background:linear-gradient(145deg,#facc15,#eab308);
-font-size:70px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:110px;
 cursor:pointer;
+transition:.08s;
 box-shadow:
-0 0 40px rgba(250,204,21,.5),
-inset 0 0 20px rgba(255,255,255,.2);
-transition:.2s;
+0 0 40px rgba(250,204,21,.4),
+inset 0 0 25px rgba(255,255,255,.3);
+user-select:none;
 }
 
-.mineBtn:active{
-transform:scale(.95);
+.coin:active{
+transform:scale(.93);
 }
 
-.stats{
+.float{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:#facc15;
+animation:floatUp 1s linear forwards;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+
+0%{
+opacity:1;
+transform:translateY(0);
+}
+
+100%{
+opacity:0;
+transform:translateY(-120px);
+}
+
+}
+
+.energyBox{
+width:90%;
+margin:auto;
+margin-top:30px;
+}
+
+.energyTop{
 display:flex;
 justify-content:space-between;
-margin-top:40px;
-gap:15px;
-}
-
-.box{
-flex:1;
-background:#1e293b;
-padding:18px;
-border-radius:18px;
-text-align:center;
-}
-
-.box h3{
-font-size:14px;
-opacity:.7;
 margin-bottom:8px;
 }
 
-.box p{
-font-size:22px;
+.energyBar{
+width:100%;
+height:18px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.energyFill{
+width:100%;
+height:100%;
+background:#22c55e;
+}
+
+.cards{
+display:flex;
+gap:15px;
+width:90%;
+margin:auto;
+margin-top:25px;
+}
+
+.card{
+flex:1;
+background:#111827;
+padding:18px;
+border-radius:20px;
+text-align:center;
+}
+
+.card h3{
+font-size:14px;
+opacity:.7;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:24px;
 font-weight:700;
 }
 
-.claimBox{
-margin-top:35px;
-background:#1e293b;
+.screen{
+display:none;
+padding-bottom:120px;
+}
+
+.activeScreen{
+display:block;
+}
+
+.claim{
+width:90%;
+margin:auto;
+margin-top:25px;
+background:#111827;
 padding:20px;
 border-radius:20px;
 }
 
-.claimBox h2{
-margin-bottom:15px;
-}
-
-input{
+.claim input{
 width:100%;
 padding:15px;
 border:none;
-outline:none;
-border-radius:14px;
+border-radius:15px;
 background:#0f172a;
 color:white;
 font-size:16px;
 }
 
-.claimBtn{
+.claim button{
 width:100%;
-margin-top:15px;
 padding:15px;
+margin-top:15px;
 border:none;
-border-radius:14px;
+border-radius:15px;
 background:#22c55e;
 color:white;
-font-size:18px;
 font-weight:700;
-cursor:pointer;
+font-size:18px;
 }
 
 .result{
@@ -163,7 +210,48 @@ text-align:center;
 font-weight:600;
 }
 
-.bottomNav{
+.friendItem{
+background:#111827;
+width:90%;
+margin:auto;
+margin-top:15px;
+padding:18px;
+border-radius:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.walletBox{
+width:90%;
+margin:auto;
+margin-top:20px;
+background:#111827;
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.walletBtn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-top:15px;
+font-weight:700;
+font-size:17px;
+}
+
+.withdraw{
+background:#facc15;
+}
+
+.deposit{
+background:#22c55e;
+color:white;
+}
+
+.nav{
 position:fixed;
 bottom:0;
 width:100%;
@@ -171,18 +259,19 @@ background:#111827;
 display:flex;
 justify-content:space-around;
 padding:15px 0;
-border-top:1px solid rgba(255,255,255,.1);
+border-top:1px solid rgba(255,255,255,.08);
 }
 
-.navItem{
+.navBtn{
 text-align:center;
 font-size:14px;
 opacity:.7;
+cursor:pointer;
 }
 
-.active{
-color:#facc15;
+.activeNav{
 opacity:1;
+color:#facc15;
 }
 
 </style>
@@ -191,63 +280,82 @@ opacity:1;
 
 <body>
 
-<div class="topbar">
+<div class="top">
 
 <div class="logo">
-🐶 DOGE PRO
+🐶 DOGE
 </div>
 
-<div class="profile">
-D
+<div class="level">
+LVL 1
 </div>
 
 </div>
 
-<div class="card">
+<div id="home" class="screen activeScreen">
+
+<div class="balanceBox">
 
 <div class="balanceText">
-Total Balance
+Balance
 </div>
 
 <div class="balance" id="balance">
 0 DOGE
 </div>
 
-<div class="mineArea">
+</div>
 
-<button class="mineBtn" onclick="mine()">
-⛏️
-</button>
+<div class="tapArea">
+
+<div class="coin" onclick="mine(event)">
+🐶
+</div>
 
 </div>
 
-<div class="stats">
+<div class="energyBox">
 
-<div class="box">
-<h3>Mining Rate</h3>
-<p>+5 DOGE</p>
+<div class="energyTop">
+<span>⚡ Energy</span>
+<span id="energyText">
+1000 / 1000
+</span>
 </div>
 
-<div class="box">
-<h3>Level</h3>
-<p>1</p>
+<div class="energyBar">
+<div class="energyFill" id="energyFill"></div>
 </div>
 
-<div class="box">
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Mining</h3>
+<p>+5</p>
+</div>
+
+<div class="card">
 <h3>Users</h3>
-<p>12K</p>
+<p>128K</p>
+</div>
+
+<div class="card">
+<h3>Profit</h3>
+<p>+12%</p>
 </div>
 
 </div>
 
-<div class="claimBox">
+<div class="claim">
 
-<h2>🎁 Claim Airdrop</h2>
+<h2>🎁 Airdrop Code</h2>
 
-<input type="text" id="code" placeholder="Enter DOGE Code">
+<input type="text" id="code" placeholder="Enter Code">
 
-<button class="claimBtn" onclick="claimCode()">
-CLAIM REWARD
+<button onclick="claimCode()">
+CLAIM
 </button>
 
 <div class="result" id="result"></div>
@@ -256,27 +364,67 @@ CLAIM REWARD
 
 </div>
 
-<div class="bottomNav">
+<div id="friends" class="screen">
 
-<div class="navItem active">
+<div class="friendItem">
+<span>👤 ahmet123</span>
+<span>+250 DOGE</span>
+</div>
+
+<div class="friendItem">
+<span>👤 dogepro</span>
+<span>+500 DOGE</span>
+</div>
+
+<div class="friendItem">
+<span>👤 moonminer</span>
+<span>+1000 DOGE</span>
+</div>
+
+</div>
+
+<div id="wallet" class="screen">
+
+<div class="walletBox">
+
+<h2>💰 Wallet</h2>
+
+<h1 id="walletBalance">
+0 DOGE
+</h1>
+
+<button class="walletBtn withdraw">
+Withdraw
+</button>
+
+<button class="walletBtn deposit">
+Deposit
+</button>
+
+<button class="walletBtn deposit"
+onclick="claimDaily()">
+🎁 DAILY REWARD
+</button>
+
+</div>
+
+</div>
+
+<div class="nav">
+
+<div class="navBtn activeNav" onclick="openScreen('home',this)">
 🏠
 <br>
 Home
 </div>
 
-<div class="navItem">
-⛏️
-<br>
-Mine
-</div>
-
-<div class="navItem">
+<div class="navBtn" onclick="openScreen('friends',this)">
 👥
 <br>
 Friends
 </div>
 
-<div class="navItem">
+<div class="navBtn" onclick="openScreen('wallet',this)">
 💰
 <br>
 Wallet
@@ -289,26 +437,78 @@ Wallet
 let balance =
 localStorage.getItem("balance") || 0;
 
-document.getElementById("balance").innerHTML =
-balance + " DOGE";
+let energy =
+localStorage.getItem("energy") || 1000;
 
-function mine(){
+updateUI();
+
+function mine(event){
+
+if(energy <= 0) return;
 
 balance = Number(balance) + 5;
+energy = Number(energy) - 5;
 
 localStorage.setItem("balance", balance);
+localStorage.setItem("energy", energy);
+
+updateUI();
+
+let float =
+document.createElement("div");
+
+float.className = "float";
+
+float.innerHTML = "+5";
+
+float.style.left =
+event.clientX - 20 + "px";
+
+float.style.top =
+event.clientY - 20 + "px";
+
+document.body.appendChild(float);
+
+setTimeout(()=>{
+float.remove();
+},1000);
+
+}
+
+function updateUI(){
 
 document.getElementById("balance").innerHTML =
 balance + " DOGE";
 
+document.getElementById("walletBalance").innerHTML =
+balance + " DOGE";
+
+document.getElementById("energyText").innerHTML =
+energy + " / 1000";
+
+document.getElementById("energyFill").style.width =
+energy / 10 + "%";
+
 }
+
+setInterval(()=>{
+
+if(energy < 1000){
+
+energy = Number(energy) + 2;
+
+localStorage.setItem("energy", energy);
+
+updateUI();
+
+}
+
+},1000);
 
 const codes = [
 "DOGE-TMA-7X92-KLP1",
 "DOGE-MINIAPP-2026-XQ",
-"DOGE-BOOST-VIP-92A",
-"DOGE-CLAIM-8XZ1",
-"DOGE-REWARD-72PQ"
+"DOGE-BOOST-VIP-92A"
 ];
 
 function claimCode(){
@@ -316,33 +516,13 @@ function claimCode(){
 let code =
 document.getElementById("code").value;
 
-let usedCodes =
-JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-if(usedCodes.includes(code)){
-
-document.getElementById("result").innerHTML =
-"❌ Code Already Used";
-
-return;
-
-}
-
 if(codes.includes(code)){
 
 balance = Number(balance) + 1000;
 
 localStorage.setItem("balance", balance);
 
-usedCodes.push(code);
-
-localStorage.setItem(
-"usedCodes",
-JSON.stringify(usedCodes)
-);
-
-document.getElementById("balance").innerHTML =
-balance + " DOGE";
+updateUI();
 
 document.getElementById("result").innerHTML =
 "✅ 1000 DOGE Added";
@@ -356,7 +536,110 @@ document.getElementById("result").innerHTML =
 
 }
 
+function openScreen(screen,btn){
+
+document.querySelectorAll(".screen")
+.forEach(s=>{
+s.classList.remove("activeScreen");
+});
+
+document.getElementById(screen)
+.classList.add("activeScreen");
+
+document.querySelectorAll(".navBtn")
+.forEach(n=>{
+n.classList.remove("activeNav");
+});
+
+btn.classList.add("activeNav");
+
+}
+
+// DAILY REWARD
+
+let lastClaim =
+localStorage.getItem("dailyClaim");
+
+function claimDaily(){
+
+let now = Date.now();
+
+if(lastClaim && now - lastClaim < 86400000){
+
+alert("Daily reward already claimed");
+
+return;
+
+}
+
+balance = Number(balance) + 5000;
+
+localStorage.setItem("balance", balance);
+
+localStorage.setItem("dailyClaim", now);
+
+updateUI();
+
+alert("🎁 5000 DOGE CLAIMED");
+
+}
+
+// RANDOM USERS
+
+const fakeUsers = [
+"dogeking",
+"elonmoon",
+"dogexminer",
+"cryptoalpha",
+"moonboy",
+"minerdoge",
+"dogelegend"
+];
+
+setInterval(()=>{
+
+let user =
+fakeUsers[
+Math.floor(Math.random()*fakeUsers.length)
+];
+
+let amount =
+Math.floor(Math.random()*5000);
+
+let box =
+document.createElement("div");
+
+box.style.position = "fixed";
+box.style.top = "120px";
+box.style.left = "50%";
+box.style.transform = "translateX(-50%)";
+box.style.background = "#111827";
+box.style.padding = "14px 20px";
+box.style.borderRadius = "15px";
+box.style.zIndex = "999";
+box.style.fontWeight = "700";
+
+box.innerHTML =
+"💰 " + user +
+" mined " + amount + " DOGE";
+
+document.body.appendChild(box);
+
+setTimeout(()=>{
+box.remove();
+},3000);
+
+},8000);
+
+// AUTO SAVE
+
+setInterval(()=>{
+
+localStorage.setItem("balance", balance);
+
+},2000);
+
 </script>
 
 </body>
-</html> 
+</html>
