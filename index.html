@@ -45,42 +45,6 @@ Invite Friend
 
 </div>
 
-<!-- WALLET SCREEN -->
-
-<div id="wallet" class="screen">
-
-<div class="walletBox">
-
-<h2>💰 Wallet</h2>
-
-<h1 id="walletBalance">
-0.00000 DOGE
-</h1>
-
-<button class="walletBtn withdraw"
-onclick="withdraw()">
-Withdraw DOGE
-</button>
-
-<button class="walletBtn deposit"
-onclick="deposit()">
-Deposit DOGE
-</button>
-
-<button class="walletBtn deposit"
-onclick="claimDaily()">
-🎁 Daily Reward
-</button>
-
-<button class="walletBtn deposit"
-onclick="boostMining()">
-⚡ Boost Mining
-</button>
-
-</div>
-
-</div>
-
 <!-- TASKS SCREEN -->
 
 <div id="tasks" class="screen">
@@ -117,7 +81,43 @@ onclick="supportOpen()">
 
 </div>
 
-<!-- NAVIGATION -->
+<!-- WALLET SCREEN -->
+
+<div id="wallet" class="screen">
+
+<div class="walletBox">
+
+<h2>💰 Wallet</h2>
+
+<h1 id="walletBalance">
+0.00000 DOGE
+</h1>
+
+<button class="walletBtn withdraw"
+onclick="withdraw()">
+Withdraw DOGE
+</button>
+
+<button class="walletBtn deposit"
+onclick="deposit()">
+Deposit DOGE
+</button>
+
+<button class="walletBtn deposit"
+onclick="claimDaily()">
+🎁 Daily Reward
+</button>
+
+<button class="walletBtn deposit"
+onclick="boostMining()">
+⚡ Boost Mining
+</button>
+
+</div>
+
+</div>
+
+<!-- NAV -->
 
 <div class="nav">
 
@@ -247,7 +247,7 @@ alert(
 
 }
 
-// TASKS
+// INSTAGRAM TASK
 
 function instagramTask(){
 
@@ -269,6 +269,8 @@ updateUI();
 alert("✅ +0.2 DOGE Added");
 
 }
+
+// TELEGRAM TASK
 
 function telegramTask(){
 
@@ -298,6 +300,16 @@ function supportOpen(){
 window.open(
 "https://t.me/dearmadenn",
 "_blank"
+);
+
+}
+
+// DEPOSIT
+
+function deposit(){
+
+alert(
+"💰 Deposit DOGE\n\nNetwork: DOGE\nAddress:\n\nDogeX9Q2P1MoonWallet"
 );
 
 }
